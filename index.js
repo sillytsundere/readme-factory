@@ -1,68 +1,76 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
+        name: 'username',
         type: 'input',
         message: 'What is your GitHub username?',
-        name: 'username'
     },
     {
+        name: 'repo',
         type: 'input',
         message: 'What is the name of your GitHub Repository?',
-        name: 'repo'
     },
     {
+        name: 'title',
         type: 'input',
         message: 'What is the title of your project?',
-        name: 'title'
     },
     {
+        name: 'description',
         type: 'input',
         message: 'Write a description for your project.',
-        name: 'description'
     },
     {
+        name: 'installation',
         type: 'input',
         message: 'Describe steps required to install your project, if applicable.',
-        name: 'installation'
     },
     {
+        name: 'usage',
         type: 'input',
         message: 'Provide instructions and steps for usage of your project.',
-        name: 'usage'
     },
     {
+        name: 'tests',
+        type: 'input',
+        message: 'List and describe any tests written for your project and how to run them, if applicable.'
+    },
+    {
+        name: 'credits',
         type: 'input',
         message: 'Provide credits for any collaborators, contributors or any tutorials or articles you used to complete this project.',
-        name: 'credits'
     },
     {
+        name: 'contributing',
         type: 'input',
         message: 'Provide guidelines for how other developers can contribute to your project.',
-        name: 'contributing'
     },
     {
+        name: 'license',
         type: 'list',
         message: 'Select a license for your project.',
-        choices: ['Academic Free License v3.0', 'Apache license 2.0', 'Creative Commons Zero v1.0 Universal', 'Educational Community License v2.0', 'MIT', 'Open Software License 3.0', 'No License'],
-        name: 'license'
+        choices: ['Apache license 2.0', 'Creative Commons Attribution 4.0 International', 'Eclipse Public License 1.0', 'MIT', 'Mozilla Public License 2.0', 'No License'],
     },
     {
+        name: 'badges',
         type: 'checkbox',
         message: 'Select badges you would like to use from the following list.',
         choices: ['HTML', 'CSS', 'JavaScript', 'JQuery', 'Bootstrap', 'Markdown'],
-        name: 'badges'
     }
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     //use fs to write to a file
+    const fileString = generateMarkdown(data);
+    console.log(fileString);
 }
-//use inquire to promt user in command line and utilize q's in array and based off answers will receive bj from inquirer to utilize to write to file
+//use inquire to promt user in command line and utilize q's in array and based off answers will receive obj from inquirer to utilize to write to file, 'response' is the object
 
 // TODO: Create a function to initialize app
 function init() {
@@ -71,7 +79,7 @@ function init() {
       .prompt(questions)
 
       .then((response) =>
-        console.log(response.title)
+        console.log(response)
       )
 }
 
