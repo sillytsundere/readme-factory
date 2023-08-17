@@ -11,6 +11,11 @@ const questions = [
         message: 'What is your GitHub username?',
     },
     {
+        name: 'email',
+        type: 'input',
+        message: 'Please enter your contact email address.',
+    },
+    {
         name: 'repo',
         type: 'input',
         message: 'What is the name of your GitHub Repository?',
@@ -41,11 +46,6 @@ const questions = [
         message: 'List and describe any tests written for your project and how to run them, if applicable.'
     },
     {
-        name: 'credits',
-        type: 'input',
-        message: 'Provide credits for any collaborators, contributors or any tutorials or articles you used to complete this project.',
-    },
-    {
         name: 'contributing',
         type: 'input',
         message: 'Provide guidelines for how other developers can contribute to your project.',
@@ -65,11 +65,11 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    //use fs to write to a file
-    const fileString = generateMarkdown(data);
-    console.log(fileString);
-}
+// function writeToFile(fileName, data) {
+//     //use fs to write to a file
+//     const fileString = generateMarkdown(data);
+//     fs.writeToFile
+// }
 //use inquire to promt user in command line and utilize q's in array and based off answers will receive obj from inquirer to utilize to write to file, 'response' is the object
 
 // TODO: Create a function to initialize app
@@ -78,8 +78,11 @@ function init() {
     inquirer
       .prompt(questions)
 
-      .then((response) =>
-        console.log(response)
+      .then((response) => {
+      console.log(response)
+        //console.log(response.badges),
+        fs.writeFileSync('./generated-readme/user-README.md', generateMarkdown({...response}))
+      }
       )
 }
 
