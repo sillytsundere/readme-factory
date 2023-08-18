@@ -1,9 +1,8 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
+// array of questions to be accessed by inquirer to present to user
 const questions = [
     {
         name: 'username',
@@ -64,20 +63,13 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//     //use fs to write to a file
-//     const fileString = generateMarkdown(data);
-//     fs.writeToFile
-// }
-//use inquire to promt user in command line and utilize q's in array and based off answers will receive obj from inquirer to utilize to write to file, 'response' is the object
-
-// TODO: Create a function to initialize app
+// Initialize app function, uses inquirer via node to prompt user to input data to be written to markdown file
 function init() {
-    //call inquirer here to access array to ask q's, then AFTER response from inquirer callback function and write to file is inside that callback function, pass in file name and data from returned inquirer obj
+    //call inquirer here to access questions array to ask questions
     inquirer
       .prompt(questions)
 
+      //after response is received from prompt method initialize a callback function to write information to file utilizing node file system
       .then((response) => {
       console.log(response)
         //console.log(response.badges),
