@@ -163,7 +163,8 @@ ${addLangBadges(data.badges)}
 
 ## License
 
-${data.license} Read more at: ${renderLicenseLink(data.license)}
+${data.license} 
+Read more at: ${renderLicenseLink(data.license)}
 
 ## Questions
 

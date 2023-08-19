@@ -76,6 +76,7 @@ function init() {
         fs.writeFileSync('./generated-readme/user-README.md', generateMarkdown({...response}))
       }
       )
+      console.log('Your README markdown file has been generated and can be viewed under the generated-readme directory of the repository!')
 }
 
 // Function call to initialize app
