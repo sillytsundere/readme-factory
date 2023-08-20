@@ -10,7 +10,17 @@ To run the code, clone the project directories and files from [the repository](h
 
 ## Usage
 
-Navigate to the directory of the index.js file and input the node command to initiate the inquire prompts, 'node index.js'. Once started you will be presented with several questions asking about the project for which you are generating a README file; answer all applicable questions. Once completed the markdown file will be generated in the 'generated-readme' directory under the name 'user-README.md.' 
+![Initial prompt](images/initial-prompt.png)
+
+Navigate to the directory of the index.js file and input the node command to initiate the inquire prompts, 'node index.js'. Once started you will be presented with several questions asking about the project for which you are generating a README file; answer all applicable questions. 
+
+![Some Questions](images/code-editor-some-prompts.png)
+
+![License choices](images/code-editor-license.png)
+
+Once completed the markdown file will be generated in the 'generated-readme' directory under the name 'user-README.md.' 
+
+![all questions answered](images/code-editor-done.png)
 
 ## Credits
 

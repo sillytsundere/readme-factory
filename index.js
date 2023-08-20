@@ -71,12 +71,10 @@ function init() {
 
       //after response is received from prompt method initialize a callback function to write information to file utilizing node file system
       .then((response) => {
-      console.log(response)
-        //console.log(response.badges),
+        console.log('Congratulations! Your markdown file has been generated and can be found in the generated-readme directory under the name user-README.md!')
         fs.writeFileSync('./generated-readme/user-README.md', generateMarkdown({...response}))
       }
       )
-      console.log('Your README markdown file has been generated and can be viewed under the generated-readme directory of the repository!')
 }
 
 // Function call to initialize app
