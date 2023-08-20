@@ -22,6 +22,8 @@ Once completed the markdown file will be generated in the 'generated-readme' dir
 
 ![all questions answered](images/code-editor-done.png)
 
+A video demonstrating the process of running the application cen be viewed at this link: [Example Demonstration](https://drive.google.com/file/d/1sW86MkGmT9N023JZxezrgD6v4QLRtBMu/view?usp=sharing)
+
 ## Credits
 
 Source code was obtained from [The Coding Bootcamp](https://github.com/coding-boot-camp/potential-enigma)
